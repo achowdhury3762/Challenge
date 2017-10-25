@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 class AppModule {
-    private static final String baseUrl = "http://swapi.co/api/";
+    private static final String baseUrl = "http://api.openweathermap.org/";
 
     @Provides
     Context bindsContext(Application application) {
@@ -34,7 +34,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    SearchService providesSAService(Retrofit retrofit) {
+    SearchService providesSearchService(Retrofit retrofit) {
         return retrofit.create(SearchService.class);
     }
 }
